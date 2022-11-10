@@ -1,0 +1,256 @@
+{% load static %}
+<html>
+<head>
+ 
+    <title>REGISTERATION</title>
+    <!-- <link rel="icon" type="image/x-icon"  href="https://img.icons8.com/fluency/48/000000/database.png"> -->
+
+
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 
+
+<style>
+    .error{
+	color:red;
+	
+}
+
+    body{
+        background-color: #f1ecec;
+    }
+    label{
+        margin-left: 10px;
+        color: black;
+        font-size: 15px;
+    }
+    .hi{
+        font-size: 12px;
+    }
+    #home{
+    width: 600px;;
+    height: 160px;
+    /* background:linear-gradient(to right ,red,blue);   */
+    color: rgb(253, 56, 7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+#home tt{
+    top: 80%;
+    position: absolute;
+    font-size: 50px;
+    font-style: initial;
+    opacity: 0;
+    animation: text 3s ease-in-out;
+}
+#home span{
+    color: rgb(250, 1, 237);
+}
+#home tt:nth-child(1){
+    animation-delay: 0s;
+}
+#home tt:nth-child(2){
+    animation-delay: 3s;
+}
+#home tt:nth-child(3){
+    animation-delay: 6s;
+}
+/* #home tt:nth-child(4){
+    animation-delay: 9s;
+    
+}*/
+#home tt:nth-child(4){
+    animation-delay: 9s;
+    
+} 
+
+@keyframes text{
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+ @media screen and (max-width:576px){
+    #home p{
+        font-size:20px;
+        /* margin: 0 100px; */
+    }
+}
+@media screen and (max-width:992px){
+    #home p{
+        font-size:20px;
+        /* margin: 0 100px; */
+    }
+}
+form{   box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    background:linear-gradient(to right,#a1ffce,#faffd1);
+   border-radius: 10px;
+   margin: 10px 3px
+
+}
+::placeholder{
+    text-align: center;
+    color: deeppink;
+}
+.input{
+    width:100%;
+    background-color:white;
+    padding:2px;
+    box-shadow:5px 5px 1px;
+}
+.logo{
+    height: 70px;
+    width: 70px;
+}
+</style>  
+</head>
+<body oncontextmenu="return false">
+    {% block content %}
+    <div>
+         {% include 'nav1.html' %}
+    </div>
+    <center><img src="{{logo}}" alt="no image" srcset="" class="logo" ></center>
+
+    <!-- {% if messages %}
+        {% for message in messages %}
+            
+            <div class="alert alert-{{message.tags}}">
+                <h3 class="text-center" style="transition: 3s;">{{message}}</h3>
+            </div>
+        {% endfor %}
+    {% endif  %} -->
+    
+ <div class="container-fluid">
+       <div class="col-md-4">
+        <form action="adddata" method="POST" >
+        {% csrf_token %}
+        <tt><h1 class="page-header text-primary text-center">NEW REGISTRATION</h1></tt>
+        <div class="form-group">
+            <tt><label>Student_Name:</label></tt>
+            <input type="text" class="form-control" name="names" id="names">
+        </div>
+        <div class="form-group">
+            <tt><label>Register_Number</label></tt>
+            <input type="text" class="form-control" name="r_number">
+        </div>
+        <div class="form-group">
+            <tt><label>Student_Mobile</label></tt>
+            <input type="text" class="form-control" name="s_number" >
+        </div>
+        <div class="form-group">
+            <tt><label>Parents_Mobile</label></tt>
+            <input type="text" class="form-control" name="p_number" >
+        </div>
+        
+
+        <div>
+
+           <button  class="btn btn-primary btn-lg btn-block ">add</button>
+
+           
+        </div>
+        
+        </form>
+        
+       </div><br><br>
+       <div class="col-md-4 pull-right">
+            
+                <input type="text" name="search" id="search" placeholder="Search" class="input">
+            
+        </div>
+        <div class="col-md-7 " style="transition: 3s;">
+           
+            <tt><h1 class="page-header text-danger text-center">View students Details</h1></tt>
+            
+            <table class="table table-bordered" style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;">
+                <thead>
+                    <tr>
+                        <th>S.NO</th>
+                        <th>Student_Name:</th>
+                        <th>Register_Number</th>
+                        <th>Student_Mobile</th>
+                        <th>Parents_Mobile</th>
+                        <th>update</th>
+                        <th>Delete</th>                      
+                    </tr>
+                </thead>
+                
+                {% for data in mydata %}
+                    
+                <tbody id="mytable">
+                    <tr style="color: rgb(18, 206, 33);">
+                        <td style="font-size:12.5px;"><tt>{{forloop.counter}}</tt></td><!--how many times run print 1,2,3..  -->
+                        <td style="font-size:12.5px;"><tt>{{data.name}}</tt></td>
+                        <td style="font-size:12.5px;"><tt>{{data.reg}}</tt> </td>
+                        <td style="font-size:12.5px;"><tt>{{data.s_mobile}}</tt></td>
+                        <td style="font-size:12.5px;"><tt>{{data.p_mobile}}</tt></td>
+                        <td><a class="btn btn-success hi" href="update/{{data.id}}">UPDATE</a></td>
+                        <td><a class="btn btn-danger hi" href="delete/{{data.id}}" >Delete</a></td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+
+            </table>
+        </div>
+        
+ </div>
+ <script>
+    $("document").ready(function(){
+        $(".alert").hide(4000);
+        $('#search').keyup(function(){
+            var value=$(this).val().toLowerCase()
+            $("#mytable tr").filter(function(){
+                $(this).toggle($(this).text().toLowerCase().indexOf(value)>-1);
+            });
+        });
+    });
+    
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" ></script>
+<script>
+    jQuery('#frm').validate({
+	rules:{
+		nam:"required",
+		rnumber:{
+			required:true,
+			minlength:12
+		},
+		snumber:{
+			required:true,
+			minlength:10
+		},
+        pnumber:{
+            required:true,
+            minlength:10
+        }
+	},messages:{
+		nam:"Please enter a student_name",
+		rnumber:{
+			required:"Please enter register_number",
+			minlength:"register number must be 12",
+		},
+		snumber:{
+			required:"Please enter students_number",
+			minlength:"mobile number must be 10",
+		},
+        pnumber:{
+			required:"Please enter your parents_number",
+            minlength:"mobile number must be 10",
+		},
+	},
+	submitHandler:function(form){
+		form.submit();
+	}
+});
+</script>
+{% endblock %}
+</body>
+</html>
+

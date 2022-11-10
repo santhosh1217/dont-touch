@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/department.css' %}"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+</head>
+<style>
+    
+</style>
+<body>
+    
+        <div>
+            {% include 'nav1.html' %}
+        </div>
+        <center><p class="pname">{{name}}</p></center>
+        <div class="ci"><center><img src="{{logo}}" alt="" srcset=""></center></div>
+        <div class="hr">
+            <a href="cse"><img src="{% static 'images/cse.png'%}" alt="cse image" srcset="" id="pic"></a>
+            <p>CSE</p>
+        </div>
+        <div class="hr">
+            <a href="civil"><img src="{% static 'images/civil.png'%}" alt="cse image" srcset="" id="pic"></a>
+            <p>CIVIL</p>
+        </div>
+        <div class="hr">
+            <a href="ece"><img src="{% static 'images/ece.png'%}" alt="cse image" srcset="" id="pic"></a>
+            <p>ECE</p>
+        </div>
+        <div class="hr">
+            <a href="eee"> <img src="{% static 'images/eee.png'%}" alt="cse image" srcset="" id="pic"></a>
+            <p>EEE</p>
+        </div>
+        <div class="hr">
+            <a href="it"><img src="{% static 'images/it.png'%}" alt="cse image" srcset="" id="pic"></a>
+            <p>IT</p>
+        </div>
+        <div class="hr">
+            <a href="mech"><img src="{% static 'images/mech.png'%}" alt="cse image" srcset="" id="pic"></a>
+            <p>MECH</p>
+        </div>
+    
+</body>
+</html>

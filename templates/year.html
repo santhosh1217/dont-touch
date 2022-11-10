@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            margin-top: 70px;
+        }
+        #first{
+            padding-left: 13%;
+        }
+        #second{
+            padding-left: 25%;
+           
+        }
+        .container2{
+            margin-top: 80px;
+        }
+        #third{
+            padding-left: 20%;
+            
+           
+        }
+        #final{
+            padding-left: 20%;
+        }
+        .container.mobile{
+            margin-top: 0px;
+            
+        }
+        img{
+            border-radius: 20%;
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;        }
+        @media only screen {
+            .container{
+                margin-top: 0px;
+                
+
+            }
+           
+        }
+        .container2.mobile{
+            margin-top: 0px;
+            
+        }
+        @media only screen {
+            .container2{
+
+                margin-top: 0px;
+
+            }
+        }
+      
+        .clg
+        {
+            margin-top: -10px;  
+           
+            text-align: center;
+            text-transform: capitalize;
+            color: rgb(5, 11, 97);
+        }
+        #h
+        {
+            text-align: center;
+            text-transform: capitalize;
+            color: rgb(5, 11, 97);
+
+        margin-top: -10px;    
+        }
+   
+    </style>
+</head>
+<body style="overflow: hidden;">
+    {% include 'nav1.html' %}
+    <h1  id="h">{{name}}</h1>
+    <h2 class="clg">department of {{link}}</h2>
+
+    <div class="container">
+        <br>
+        <a id="first" href="{{link}}/1"><img src="{% static 'images/first.jpeg' %}" alt="" width="250px" height="250px"></a>
+
+        
+        <a id="second" href="{{link}}/2"><img src="{% static 'images/second.jpg' %}" alt="" width="250px" height="250px"></a><br>
+    </div>
+    <br>
+        
+    <div class="container2"><a id="third" href="{{link}}/3"><img src="{% static 'images/third.jpg' %}" alt="" width="250px" height="250px"></a>
+             <a id="final" href="{{link}}/4"><img src="{% static 'images/final.jpg' %}" alt="" width="250px" height="250px"></a>
+    </div>
+            
+        
+    
+
+    
+</body>
+
+</html>
