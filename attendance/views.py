@@ -54,7 +54,7 @@ def login(request,id):
                     if models.Staff.objects.filter(staffCollege=obj.name).exists():
                         print(obj.name)
                         data=models.Staff.objects.filter(staffCollege=obj.name)
-                        return render(request,"addstaff.html",{"mydata":data})
+                        return render(request,"addstaff.html",{"mydata":data,"logo":obj.logo.url,"userid":obj.username})
                     else:
                         print("hellooo")
                         return render(request,"addstaff.html")
@@ -77,7 +77,7 @@ def login(request,id):
               
                     
                     obj1 = models.college.objects.get(name = obj.staffCollege)
-                    return render(request,"department.html",{"name":obj1.name,"logo":obj1.logo.url})
+                    return render(request,"department.html",{"name":obj1.name,"logo":obj1.logo.url,"userid":obj.staffUsername})
 
                 else:
                     messages.info(request,"4")
@@ -103,7 +103,8 @@ def login(request,id):
 
 def year(request,user,department):
     stf = models.Staff.objects.get(staffUsername=user)
-    return render(request, "year.html",{"link":department,"name":stf.staffCollege})
+    obj1 = models.college.objects.get(name=stf.staffCollege)
+    return render(request, "year.html",{"link":department,"name":stf.staffCollege,"logo":obj1.logo.url})
 
 ############################################################## attendance ########################################################
 
@@ -179,7 +180,7 @@ def admin(request,user,department,year):
     obj = models.Staff.objects.get(staffUsername=user)
     obj1 = models.college.objects.get(name=obj.staffCollege) 
     detial = models.Student.objects.filter(department=department,year=year,clg = obj1.name) 
-    return render(request,"addstudent.html",{"logo":obj1.logo.url,"mydata":detial})
+    return render(request,"addstudent.html",{"logo":obj1.logo.url,"mydata":detial,"userid":obj.staffUsername})
 
 ############################################################ UPDATE   ###############################################
 
