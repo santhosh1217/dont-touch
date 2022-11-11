@@ -8,37 +8,28 @@
 
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
    
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
-    <script src="https://code.jquery.com-1.10.2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <!-- <link rel="stylesheet" href="https://cdn.usebootstrap.com/bootstrap/4.2.1/css/bootstrap.min.css"> -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">  -->
 <style>
-    @import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
+     *{
+        padding: 0;
+        margin: 0;
+        
+    }
     .error{
 	color:red;
 	
 }
-th{
-    color: rgb(12, 11, 11);
-    background-color: #eee;
-}
-td{
-    text-align: center;
-}
-form.form{
-    height: 50%;
-}
+
     body{
-        background-color: #0d7d99;
-    }
-    #form label{
-        color: rgb(15, 15, 15);
+        background-color: #fdfdff;
     }
     label{
         margin-left: 10px;
-        color:rgb(17, 13, 15) ;
+        color: black;
         font-size: 15px;
     }
     .hi{
@@ -105,8 +96,8 @@ form.form{
         /* margin: 0 100px; */
     }
 }
-form{   box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
-    background:linear-gradient(to right,#a1ffce,#faffd1);
+.forms{   box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    background:linear-gradient(to right,#e9820d,#ee67e3);
    border-radius: 10px;
    margin: 10px 3px
 
@@ -125,77 +116,35 @@ form{   box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0p
     height: 70px;
     width: 70px;
 }
-table{
-    width: 100px;
+#search{
+    width: 200px;
 }
-/*                          #######################    ########################### */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
-
-
-       body{
-        background-color:rgb(71, 42, 42);
-        font-family: "Poppins", sans-serif;
-        font-weight: 300;
-       }
-
-       .height{
-        height: 100vh;
-       }
-       
-
-       .search{
-       position: relative;
-       box-shadow: 0 0 40px rgba(51, 51, 51, .1);
-         
-       }
-
-       .search input{
-
-        height: 60px;
-        text-indent: 25px;
-        border: 2px solid #d6d4d4;
-
-
-       }
-
-
-       .search input:focus{
-
-        box-shadow: none;
-        border: 2px solid blue;
-
-
-       }
-
-       .search .fa-search{
-
-        position: absolute;
-        top: 20px;
-        left: 16px;
-
-       }
-
-      
-       ::placeholder{
-            text-align: center;
-       }
-    
-        .fixed-nav-bar{
-            position: fixed; top: 0; left: 0; z-index: 9999; width: 100%; height: 50px; background-color: #00a087;
+th{
+    color: rgb(12, 12, 12);
 }
-       
+table, td, th {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 50%;
+}
 </style>  
+</style>
+
+  
 </head>
-<body oncontextmenu="return false" style="background-color: rgb(248, 247, 245);">
+<body  style="background-color: rgb(248, 247, 245);">
     
     
     {% block content %}
     <div>
-    {% include 'nav1.html' %}
-</div>
+        {% include 'nav1.html' %}
+   </div>
     <!-- <link rel="stylesheet" href="{% static 'css/home.css' %}"> -->
     <div style="margin-top: 60px;">
-    <center><img src="{% static 'images/ci.png'%}" alt="no image" srcset="" class="logo" ></center>
+    <center><img src="{{logo}}" alt="no image" srcset="" class="logo" ></center>
 
     <!-- {% if messages %}
         {% for message in messages %}
@@ -206,9 +155,9 @@ table{
         {% endfor %}
     {% endif  %} -->
     
- <div class="container-fluid">
-       <div class="col-md-4">
-        <form action="admin/addstaff" method="POST" id="form">
+    <div class="row">
+        <div class="col-md-4">
+        <form action="admin/addstaff" method="POST" class="forms">
         {% csrf_token %}
         <tt><p class="page-header text-primary text-center" style="font-size: 20px;">NEW REGISTRATION</p></tt>
         <div class="form-group">
@@ -244,19 +193,9 @@ table{
         </form>
         
        </div><br><br>
-       <div class="col-md-4 pull-right">
-            
-                <!-- <input type="text" name="search" id="search" placeholder="Search" class="input"> -->
-                <div class="search">
-                    <i class="fa fa-search"></i>
-                    <input type="text" class="form-control" placeholder="Find Sudent" name="search" id="search">
-                  </div>
-            
-        </div>
-        <div class="col-md-8 " style="transition: 3s;">
-           
-           <marquee> <tt><h1 class="page-header text-danger text-center">View Stafs And Hod details</h1></tt> </marquee>
-            
+       <div class="col-md-8" style="transition: 3s;padding: 0;margin: 0;">
+        <div class="pull-right" id="search" style="background-color: red;margin-left: 78%;"><input class="form-control" type="search" placeholder="Search" aria-label="Search" ></div>
+        <tt><h1 class="page-header text-danger text-center">View students Details</h1></tt>            
             <table class="table table-bordered" style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;">
                 <thead >
                     <tr>

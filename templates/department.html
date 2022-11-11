@@ -12,14 +12,68 @@
 </head>
 <style>
     
+    /* *{
+    box-sizing: border-box;
+    background-color: rgb(86, 175, 219);
+    padding: 0px;
+    margin: 0px;
+} */
+
+
+@media (max-width: 576px) {
+    p{
+        font-size: 25px;
+    }
+    .ci img{
+        height: 80px;
+        width: 80px;
+        opacity: .5;
+        /* box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
+        border-radius: 10px; */
+    }
+    .hr{
+        float: left;
+        width: 80px;
+        height: 80px;
+        align-items: center;
+        margin: 40px 60px; 
+        border-radius: 50%;
+        /* box-sizing: border-box;
+        box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white; */
+    }
+    /*       ###########################################           */
+    
+/* .text-box {
+    margin-left: 44vw;
+	 margin-top: 42vh;
+} */
+
+} 
+    /* 222222222222222222222222222222222222222222222222222222222222222222 */
+    p{
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hr{
+        
+        margin: 40px 60px; 
+        
+    }
+img:hover{
+    background-color: yellow;
+
+}
+
 </style>
 <body>
     
         <div>
             {% include 'nav1.html' %}
         </div>
-        <center><p class="pname">{{name}}</p></center>
-        <div class="ci"><center><img src="{{logo}}" alt="" srcset=""></center></div>
+        <center><h1 style="color: purple;">{{name}}</h1></center>
+        <center><img src="{{logo}}" alt="image" srcset="" class="ci" style="height: 50px;width:50px"></center>
         <div class="hr">
             <a href="cse"><img src="{% static 'images/cse.png'%}" alt="cse image" srcset="" id="pic"></a>
             <p>CSE</p>
@@ -43,6 +97,31 @@
         <div class="hr">
             <a href="mech"><img src="{% static 'images/mech.png'%}" alt="cse image" srcset="" id="pic"></a>
             <p>MECH</p>
+        </div>
+        <div class="hr">
+            <a href="biomedical"><img src="{% static 'images/bio.png'%}" alt="cse image" srcset="" id="pic"></a>
+            <p>BIO MEDICAL</p>
+        </div>
+        <div class="hr">
+            <a href="aero"><img src="{% static 'images/aero.png'%}" alt="cse image" srcset="" id="pic"></a>
+            <p>AERO</p>
+        </div>
+        <div class="hr">
+            <a href="geo"><img src="{% static 'images/geo.png'%}" alt="cse image" srcset="" id="pic"></a>
+            <p>GEO</p>
+        </div>
+        
+        <div class="hr">
+            <a href="mechetronics"><img src="{% static 'images/mechetronics.png'%}" alt="cse image" srcset="" id="pic"></a>
+            <p>MECHET</p>
+        </div>
+        <div class="hr">
+            <a href="ml"><img src="{% static 'images/ml.png'%}" alt="cse image" srcset="" id="pic"></a>
+            <p>MEDICAL</p>
+        </div>
+        <div class="hr">
+            <a href="textile"><img src="{% static 'images/textile.png'%}" alt="cse image" srcset="" id="pic"></a>
+            <p>TEXTILE</p>
         </div>
     
 </body>

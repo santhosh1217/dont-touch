@@ -1,14 +1,26 @@
+html{
+    margin-left: 30%;
+    margin-top: 50px;
+
+}
 body{
 	text-transform: capitalize;
 	background: url(https://s3.amazonaws.com/prod.static-content.quillette.com/2022/06/Student.png);
 	background-size:auto;
+    background-attachment: fixed;
+    background-repeat:no-repeat ;
     width: 50%;
     height: 50%;
+
     
+    align-items: center;
+    justify-content: center;
+    display: flex;
     
 
 
 }
+
 .full{
 	text-align: center;
 	margin-top: 100px;
@@ -18,7 +30,7 @@ body{
 	height: 50%;
 	border-radius: 10%;
     margin-right:-30% ;
-	margin-left: 10%;
+	margin-left: 5%;
     padding-right: 10%;
     padding-left: 10%;
 	padding-top: 10%;
@@ -101,14 +113,33 @@ button{
 }
 
 @media screen and (max-width: 900px){
- 	body{
- 		background-image: none;
- 		background-color: black;
- 	}
- 	html{
- 		background-image: none;
- 		background-color: black;
- 	}
+    html{
+        margin-left: 13%;
+        margin-right: 10%;
+    }
+    body{
+        background-image: url("https://images.unsplash.com/photo-1611068813580-b07ef920964b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80");
+        background-color: white;
+        margin: auto;
+        justify-content: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #full{
+        margin-left: 130px;
+        width: 340px;
+
+    }
+    .button-box{
+         margin-left: 100px;
+        width: 300px;
+        height: 40px;
+    }
+    .form-box{
+        margin-left: 80px;
+    }
+    
+ 	
  }
  * {
     box-shadow: none;
@@ -125,9 +156,12 @@ body {
     font-size: 17px;
 }
 
+
 .button-box{
+
    
-    margin: 35px auto;
+    margin-left: 80px;
+    max-width: 270px;
     position: relative;
     border-radius: 30px;
     background: #fff;
