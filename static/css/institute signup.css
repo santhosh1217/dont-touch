@@ -107,7 +107,7 @@ label{
 }
 @media screen and (max-width:576px){
 	body{
-		background-image: url("https://th.bing.com/th/id/OIP.CY4eTdzXJk5pT6P6TnRbqQHaQB?pid=ImgDet&w=162&h=350&c=7");
+		background-image: url("../images/bg/admin.png");
 		background-color: black;
 	}
 	.full{
