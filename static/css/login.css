@@ -1,3 +1,4 @@
+
 html{
     margin-left: 30%;
     margin-top: 50px;
@@ -5,13 +6,12 @@ html{
 }
 body{
 	text-transform: capitalize;
-	background: url(https://s3.amazonaws.com/prod.static-content.quillette.com/2022/06/Student.png);
+	background: url("../images/bg/admin.png");
 	background-size:auto;
     background-attachment: fixed;
     background-repeat:no-repeat ;
     width: 50%;
     height: 50%;
-
     overflow: hidden;
     align-items: center;
     justify-content: center;
@@ -24,7 +24,7 @@ body{
 .full{
 	text-align: center;
 	margin-top: 100px;
-	background-color: rgb(255,255,255,0.4);
+	background-color: rgba(172, 172, 172, 0.493);
 	-webkit-backdrop-filter: blur(5px);
 	width: 400px;
 	height: 50%;
@@ -118,7 +118,7 @@ button{
         margin-right: 10%;
     }
     body{
-        background-image: url("https://images.unsplash.com/photo-1611068813580-b07ef920964b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80");
+        
         background-color: white;
         margin: auto;
         justify-content: center;

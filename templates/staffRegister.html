@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+<style>
+    #success_message{ display: none;}
+   
+</style>
+<body style="background-color: lightblue;">
+    {% block content %}
+    <div class="container">
+
+        <form class="well form-horizontal" action="addstaff" method="post"  id="contact_form">
+            {% csrf_token %}
+    <fieldset>
+    
+    <!-- Form Name -->
+    <legend><center><h2><b>Staff Registration Form</b></h2></center></legend><br>
+    
+    <!-- Text input-->
+    
+    <div class="form-group">
+      <label class="col-md-4 control-label">Staff Name</label>  
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <input  name="s_name" placeholder="Name" class="form-control"  type="text">
+        </div>
+      </div>
+    </div>
+    <!-- TEXT -->
+    <div class="form-group"> 
+        <label class="col-md-4 control-label">Department</label>
+          <div class="col-md-4 selectContainer">
+          <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+          <select name="s_dep" class="form-control selectpicker">
+            <option value="">Select Staff Department</option>
+            <option>CSE</option>
+            <option>IT</option>
+            <option >MECHANICAL</option>
+            <option >AGREE</option>
+            <option >AERONAUTICAL</option>
+            <option >MEDICAL ELECTRONICS</option>
+            <option >EEE</option>
+            <option >ECE</option>
+            <option >GEO INFORMATICS</option>
+            <option >TEXTILE</option>
+            <option >CIVIL</option>
+            <option >BIO MEDICAL</option>
+            <option>MECHETRONICS</option>
+          </select>
+        </div>
+      </div>
+      </div>
+    <!-- Text input-->
+    
+    <div class="form-group">
+      <label class="col-md-4 control-label" >Position</label> 
+        <div class="col-md-4 inputGroupContainer">
+        <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <input name="s_position" placeholder="position" class="form-control"  type="text">
+        </div>
+      </div>
+    </div>
+    <!--text  -->
+    <div class="form-group">
+        <label class="col-md-4 control-label" >Staff Username</label> 
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input name="s_username" placeholder="Username" class="form-control"  type="text">
+          </div>
+        </div>
+      </div>
+      <!-- text -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" >Staff Password</label> 
+          <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input name="s_password" placeholder="Password" class="form-control"  type="text">
+          </div>
+        </div>
+      </div>
+      
+    <!-- Success message -->
+    <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>
+    
+    <!-- Button -->
+    <div class="form-group">
+      <label class="col-md-4 control-label"></label>
+      <div class="col-md-4"><br>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-warning" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+      </div>
+    </div>
+    
+    </fieldset>
+    </form>
+    </div>
+        </div>
+        {% endblock %}<!-- /.container -->
+<!-- 4566666666666666666666666666666666666666666666666666666  script 344444444444444444444444 -->
+
+</body>
+</html>

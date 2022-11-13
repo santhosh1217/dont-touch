@@ -58,6 +58,30 @@
 	</div>
 </div>
 </div>
+<script>
+function leftClick() 
+{
+	
+	window.location.reload();
+	btn.style.left='0';
+	document.getElementById("type").value = "admin";
+	document.getElementById("user").innerHTML = "admin";
+	document.body.style.background='url("../images/bg/admin.png")';
+	document.getElementById("signup").style.visibility = "visible";
+}
+
+function rightClick() 
+{
+	
+	btn.style.left='110px';
+	document.getElementById("type").value= "staff";
+	document.getElementById("user").innerHTML = "staff";
+	document.body.style.backgroundImage='url({% static "images/bg/staff.png" %})';
+	document.getElementById("signup").style.visibility = "hidden";
+	
+}
+
+</script>
 
 	<style>
 

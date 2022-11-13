@@ -40,6 +40,11 @@ img:hover{
 }
 
 @media (max-width: 576px) {
+
+    .depart {
+        border: 1px solid red;
+
+    };
     p{
         font-size: 25px;
     }
@@ -51,10 +56,12 @@ img:hover{
         border-radius: 10px; */
     }
     .hr{
-        float: left;
+        float:left;
         width: 60px;
         height: 60px;
         align-items: center;
+       
+    
         
         border-radius: 50%;
         /* box-sizing: border-box;
@@ -80,55 +87,66 @@ img:hover{
         </div>
       
         <div class="hr">
-            <a href="cse"><img src="{% static 'images/cse.png'%}" alt="cse image" srcset="" id="pic"></a>
+            <a href="CSE"><img src="{% static 'images/cse.png'%}" alt="cse image" srcset="" id="pic"></a>
             <p>CSE</p>
         </div>
         <div class="hr">
-            <a href="civil"><img src="{% static 'images/civil.png'%}" alt="cse image" srcset="" id="pic"></a>
+            <a href="CIVIL"><img src="{% static 'images/civil.png'%}" alt="cse image" srcset="" id="pic"></a>
             <p>CIVIL</p>
         </div>
         <div class="hr">
-            <a href="ece"><img src="{% static 'images/ece.png'%}" alt="cse image" srcset="" id="pic"></a>
+            <a href="ECE"><img src="{% static 'images/ece.png'%}" alt="cse image" srcset="" id="pic"></a>
             <p>ECE</p>
         </div>
         <div class="hr">
-            <a href="eee"> <img src="{% static 'images/eee.png'%}" alt="cse image" srcset="" id="pic"></a>
+            <a href="EEE"> <img src="{% static 'images/eee.png'%}" alt="cse image" srcset="" id="pic"></a>
             <p>EEE</p>
         </div>
         <div class="hr">
-            <a href="it"><img src="{% static 'images/it.png'%}" alt="cse image" srcset="" id="pic"></a>
+            <a href="IT"><img src="{% static 'images/it.png'%}" alt="cse image" srcset="" id="pic"></a>
             <p>IT</p>
         </div>
         <div class="hr">
-            <a href="mech"><img src="{% static 'images/mech.png'%}" alt="cse image" srcset="" id="pic"></a>
+            <a href="MECHANICAL"><img src="{% static 'images/mech.png'%}" alt="cse image" srcset="" id="pic"></a>
             <p>MECH</p>
         </div>
         <div class="hr">
-            <a href="bio medical"><img src="{% static 'images/bio.png'%}" alt="cse image" srcset="" id="pic"></a>
+            <a href="BIO MEDICAL"><img src="{% static 'images/bio.png'%}" alt="cse image" srcset="" id="pic"></a>
             <p>BIO MEDICAL</p>
         </div>
         <div class="hr">
-            <a href="aero"><img src="{% static 'images/aero.png'%}" alt="cse image" srcset="" id="pic"></a>
+            <a href="AERONAUTICAL"><img src="{% static 'images/aero.png'%}" alt="cse image" srcset="" id="pic"></a>
             <p>AERO</p>
         </div>
         <div class="hr">
-            <a href="geo"><img src="{% static 'images/geo.png'%}" alt="cse image" srcset="" id="pic"></a>
+            <a href="GEO INFORMATICS"><img src="{% static 'images/geo.png'%}" alt="cse image" srcset="" id="pic"></a>
             <p>GEO</p>
         </div>
         
         <div class="hr">
-            <a href="mechetronics"><img src="{% static 'images/mechetronics.png'%}" alt="cse image" srcset="" id="pic"></a>
+            <a href="MECHETRONICS"><img src="{% static 'images/mechetronics.png'%}" alt="cse image" srcset="" id="pic"></a>
             <p>MECHET</p>
         </div>
         <div class="hr">
-            <a href="medical electronics"><img src="{% static 'images/ml.png'%}" alt="cse image" srcset="" id="pic"></a>
+            <a href="MEDICAL ELECTRONICS"><img src="{% static 'images/ml.png'%}" alt="cse image" srcset="" id="pic"></a>
             <p>MEDICAL</p>
         </div>
         <div class="hr">
-            <a href="textile"><img src="{% static 'images/textile.png'%}" alt="cse image" srcset="" id="pic"></a>
+            <a href="TEXTILE"><img src="{% static 'images/textile.png'%}" alt="cse image" srcset="" id="pic"></a>
             <p>TEXTILE</p>
         </div>
+        <div hidden>
+        <input id="error" value={{msg}} ></input>
+    </div>
     </center>
     
 </body>
 </html>
+<script>
+    var msg = document.getElementById("error").value;
+    if ( msg == "true" )
+    {
+        alert("staff's counld not access others department");
+    }
+    
+</script>

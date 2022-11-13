@@ -1,0 +1,88 @@
+{% load static %}
+<html>
+<head>
+ 
+    <title>REGISTERATION</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<style>
+
+</style>  
+</head>
+<body style="background-color: #faf9fc;" onload="myfunction()">
+    
+    {% block content %}
+    <div>
+         {% include 'attendance_navigation.html' %}
+    </div>
+
+
+    <br>
+            <center><tt><h3 class="page-header text-danger text-center nameses">View  staff Details</h3></tt></center>
+            <p  id="demo" style="font-weight: bold;"></p>
+            </i><input type="text" name="search" id="search" placeholder="Search" class="input pull-right" style="padding: 5px;margin-right: 10px;border-width: 3px;border-radius: 30px;border-color: rgb(9, 188, 233);">
+            <a class="btn btn-primary pull-right" id="" href="admin/addnewstaff/" style="margin-right: 20px;"><i class="fa fa-plus"></i> ADD STAFF </a>
+<br>
+        <div class="table-responsive">
+            <table class="table table-bordered" id="t" style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;">
+                <br>
+                <thead>
+                    <tr>
+                        <th scope="col">S.NO</th>
+                        <th scope="col">Staff Name</th>
+                        <th scope="col">Staff Department</th>
+                        <th scope="col">Staff Position</th>
+                        <th scope="col">Staf Username</th>
+                        <th scope="col">Staff Password</th>
+                        <th scope="col">update</th>
+                        <th scope="col">Delete</th>                      
+                    </tr>
+                </thead>
+                
+                {% for data in mydata %}
+                    
+                <tbody id="mytable">
+                    <tr style="color: rgb(3, 4, 54);" scope="row" id="td1">
+                        <td style="font-size:12.5px;"><tt>{{forloop.counter}}</tt></td><!--how many times run print 1,2,3..  -->
+                        <td style="font-size:12.5px;"><tt>{{data.staffName}}</tt></td>
+                        <td style="font-size:12.5px;"><tt>{{data.staffDep}}</tt> </td>
+                        <td style="font-size:12.5px;"><tt>{{data.staffPosition}}</tt></td>
+                        <td style="font-size:12.5px;"><tt>{{data.staffUsername}}</tt></td>
+                        <td style="font-size:12.5px;"><tt>{{data.staffPassword}}</tt></td>
+                        <td><a class="btn btn-success btn-sm hi" href="update/{{data.id}}">UPDATE</a></td>
+                        <td><a class="btn btn-danger btn-sm hi" href="delete/{{data.id}}" >Delete</a></td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+
+            </table>
+        </div>
+
+ </div>
+ <script>
+    $("document").ready(function(){
+        $(".alert").hide(4000);
+        $('#search').keyup(function(){
+            var value=$(this).val().toLowerCase()
+            $("#mytable tr").filter(function(){
+                $(this).toggle($(this).text().toLowerCase().indexOf(value)>-1);
+            });
+        });
+    });
+    
+</script>
+<script>
+    
+    function myfunction(){
+        var colCount = $("#mytable tr").length;
+        document.getElementById("demo").innerHTML="Total Staff: "+colCount;
+    }
+  </script> 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" ></script>
+{% endblock %}
+</body>
+</html>
+

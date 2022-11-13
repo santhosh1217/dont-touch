@@ -24,25 +24,35 @@
   }
   #name
   {
-    font-size:25px;
+    font-size:20px;
     color: white;
-    margin-left: 60px;
+    
+    margin-left: 14%;
     margin-top: -60px;
+    padding-right: 20%;
     font-size: 20px;
 
-
   }
-  @media  screen and (min-width:484px) {
+  #back
+  {
+     width: 90%;
+     height: 30px;
+     font-size: small;
+  }
+  
+  @media  screen and (min-width:800px) {
 
   #name
   {
     
-    margin-top: 0%;
-    margin-left: 0%;
+    margin-top: -15px;
+    margin-left: 15%;
     padding-right: 20%;
+    
     
    
   }
+
 
 }
 </style>
@@ -70,6 +80,9 @@
           </ul>
           
           <form class="form-inline my-2 my-lg-0" action="/" >
+            <div class="back">
+              <a id="back" class="navbar-brand" href="back" style="background-color: rgba(255, 255, 255, 0.288);border:1px solid rgba(255, 255, 255, 0.877);">back to attendance</a>
+            </div>
             <div>
             <a style="margin-right: 30px" class="navbar-brand" href="#">{{userid}}</a>
           </div>

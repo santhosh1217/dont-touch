@@ -1,0 +1,80 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPDATE</title>
+    <link rel="icon" type="image/x-icon"  href="https://img.icons8.com/fluency/48/000000/database.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+       
+      .form-control{
+        padding: 20px;
+}
+.form-group label{
+    font-size: 20px;
+}
+
+    </style>
+</head>
+<body style="overflow: hidden"> 
+{% block content %}
+
+<h1>{{dat}}</h1>
+ <div class="container-fluid">
+   
+       <div class="col-md-offset-3 col-md-5">
+        <form action="" method="POST" autocomplete="off"  enctype="multipart/form-data">
+        {% csrf_token %}
+        <h1 class="page-header text-primary text-center">UPDATE DATA</h1>        
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" name="s_name" required oninvalid="this.setCustomValidity('name?')" oninput="this.setCustomValidity('')" value="{{data.staffName}}">
+        </div>
+        <div class="form-group">
+            <label>Department</label>
+                  <select name="s_dep" class="form-control selectpicker">
+                    <option value="">Select Staff Department</option>
+                    <option>CSE</option>
+                    <option>IT</option>
+                    <option >MECHANICAL</option>
+                    <option >AGREE</option>
+                    <option >AERONAUTICAL</option>
+                    <option >MEDICAL ELECTRONICS</option>
+                    <option >EEE</option>
+                    <option >ECE</option>
+                    <option >GEO INFORMATICS</option>
+                    <option >TEXTILE</option>
+                    <option >CIVIL</option>
+                    <option >BIO MEDICAL</option>
+                    <option>MECHETRONICS</option>
+                  </select>
+                </div>
+              
+        <div class="form-group">
+            <label>position</label>
+            <input type="text" class="form-control" name="s_position" required value="{{data.staffPosition}}">
+        </div>
+        <div class="form-group">
+            <label class="pull left">username</label>
+            <input type="text" class="form-control" name="s_username" required value="{{data.staffUsername}}">
+        </div>
+        <div class="form-group">
+            <label class="pull left">password</label>
+            <input type="text" class="form-control" name="s_password" required value="{{data.staffPassword}}">
+        </div>
+        <div >
+            <input type="submit" value="UPDATE" class="btn btn-primary btn-block">
+        </div>
+        </form>
+       </div>
+    </div>
+    <script>
+
+</script>
+    {% endblock %}
+</body>
+</html>
