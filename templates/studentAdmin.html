@@ -73,24 +73,13 @@
 </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" ></script>
-<script>
-    $("document").ready(function(){
-        $(".alert").hide(4000);
-        $('#search').keyup(function(){
-            var value=$(this).val().toLowerCase()
-            $("#mytable tr").filter(function(){
-                $(this).toggle($(this).text().toLowerCase().indexOf(value)>-1);
-            });
-        });
-    });
-    
-</script>
+
 
 <script>
     
     function myfunction(){
         var colCount = $("#mytable tr").length;
-        document.getElementById("demo").innerHTML="Total Staff: "+colCount;
+        document.getElementById("demo").innerHTML="Total Students: "+colCount;
     }
   </script> 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
