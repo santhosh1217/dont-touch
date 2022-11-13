@@ -23,7 +23,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/',admin.site.urls),
 
-    path("<str:id>/admin/addstaff",views.addstaffs),
+    path("<str:id>/admin/addnewstaff/",views.newstaff),
+
+    path("<str:id>/admin/addnewstaff/addstaff",views.addstaffs),
 
     path("<str:users>/delete/<int:id>",views.staff_delete),
 
@@ -63,6 +65,7 @@ urlpatterns = [
 ############################################################################## edit #######################################
 
     path("<str:user>/<str:department>/<str:year>/admin/",views.admin,name="studentAdmin"),
+    path("<str:user>/<str:department>/<str:year>/admin/back",views.back),
     
 ############################################################################## add student ################################
 

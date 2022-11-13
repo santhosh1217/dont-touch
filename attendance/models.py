@@ -4,9 +4,10 @@ from django.db import models
 
 
 # Create your models here.
+
 class college(models.Model):
-    username  = models.CharField( max_length=50)
-    password = models.CharField( max_length=20)
+    username  = models.TextField( )
+    password = models.TextField( )
     name=models.TextField()
     logo = models.ImageField( upload_to="pics")
 
