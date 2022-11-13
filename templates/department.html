@@ -8,7 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'css/department.css' %}"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
 </head>
 <style>
     
@@ -18,39 +18,12 @@
     padding: 0px;
     margin: 0px;
 } */
+.cname
+{
+    font-size: 50px;
+}
 
-
-@media (max-width: 576px) {
-    p{
-        font-size: 25px;
-    }
-    .ci img{
-        height: 80px;
-        width: 80px;
-        opacity: .5;
-        /* box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
-        border-radius: 10px; */
-    }
-    .hr{
-        float: left;
-        width: 80px;
-        height: 80px;
-        align-items: center;
-        margin: 40px 60px; 
-        border-radius: 50%;
-        /* box-sizing: border-box;
-        box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white; */
-    }
-    /*       ###########################################           */
-    
-/* .text-box {
-    margin-left: 44vw;
-	 margin-top: 42vh;
-} */
-
-} 
-    /* 222222222222222222222222222222222222222222222222222222222222222222 */
-    p{
+p{
     font-size: 1rem;
     font-weight: bold;
     text-align: center;
@@ -66,14 +39,46 @@ img:hover{
 
 }
 
+@media (max-width: 576px) {
+    p{
+        font-size: 25px;
+    }
+    .ci img{
+        height: 80px;
+        width: 80px;
+        opacity: .5;
+        /* box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
+        border-radius: 10px; */
+    }
+    .hr{
+        float: left;
+        width: 60px;
+        height: 60px;
+        align-items: center;
+        
+        border-radius: 50%;
+        /* box-sizing: border-box;
+        box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white; */
+    }
+    /*       ###########################################           */
+    
+/* .text-box {
+    margin-left: 44vw;
+	 margin-top: 42vh;
+} */
+
+} 
+
+    /* 222222222222222222222222222222222222222222222222222222222222222222 */
+
+
 </style>
-<body>
+<body >
     
         <div>
-            {% include 'nav1.html' %}
+            {% include 'department_navigation.html' %}
         </div>
-        <center><h1 style="color: purple;">{{name}}</h1></center>
-        <center><img src="{{logo}}" alt="image" srcset="" class="ci" style="height: 50px;width:50px"></center>
+      
         <div class="hr">
             <a href="cse"><img src="{% static 'images/cse.png'%}" alt="cse image" srcset="" id="pic"></a>
             <p>CSE</p>
@@ -99,7 +104,7 @@ img:hover{
             <p>MECH</p>
         </div>
         <div class="hr">
-            <a href="biomedical"><img src="{% static 'images/bio.png'%}" alt="cse image" srcset="" id="pic"></a>
+            <a href="bio medical"><img src="{% static 'images/bio.png'%}" alt="cse image" srcset="" id="pic"></a>
             <p>BIO MEDICAL</p>
         </div>
         <div class="hr">
@@ -116,13 +121,14 @@ img:hover{
             <p>MECHET</p>
         </div>
         <div class="hr">
-            <a href="ml"><img src="{% static 'images/ml.png'%}" alt="cse image" srcset="" id="pic"></a>
+            <a href="medical electronics"><img src="{% static 'images/ml.png'%}" alt="cse image" srcset="" id="pic"></a>
             <p>MEDICAL</p>
         </div>
         <div class="hr">
             <a href="textile"><img src="{% static 'images/textile.png'%}" alt="cse image" srcset="" id="pic"></a>
             <p>TEXTILE</p>
         </div>
+    </center>
     
 </body>
 </html>

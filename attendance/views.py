@@ -54,10 +54,10 @@ def login(request,id):
                     if models.Staff.objects.filter(staffCollege=obj.name).exists():
                         print(obj.name)
                         data=models.Staff.objects.filter(staffCollege=obj.name)
-                        return render(request,"addstaff.html",{"mydata":data,"logo":obj.logo.url,"userid":obj.username})
+                        return render(request,"addstaff.html",{"mydata":data,"logo":obj.logo.url,"userid":obj.username,"college":obj.name})
                     else:
-                        print("hellooo")
-                        return render(request,"addstaff.html")
+                        
+                        return render(request,"addstaff.html",{"logo":obj.logo.url,"userid":obj.username,"college":obj.name})
                 
                 else:
                     messages.info(request,"2")
@@ -91,8 +91,8 @@ def login(request,id):
     else:
                 print(id)
                 obj = models.college.objects.get(username=id)
-                data=models.Staff.objects.filter(staffCollege=obj.name)
-                return render(request,"addstaff.html",{"mydata":data})
+                data= models.Staff.objects.filter(staffCollege = obj.name)
+                return render(request,"addstaff.html",{"mydata":data,"logo":obj.logo.url,"userid":obj.username})
 
 
     
@@ -104,7 +104,7 @@ def login(request,id):
 def year(request,user,department):
     stf = models.Staff.objects.get(staffUsername=user)
     obj1 = models.college.objects.get(name=stf.staffCollege)
-    return render(request, "year.html",{"link":department,"name":stf.staffCollege,"logo":obj1.logo.url})
+    return render(request, "year.html",{"link":department,"name":stf.staffCollege,"logo":obj1.logo.url,"userid":user})
 
 ############################################################## attendance ########################################################
 
@@ -113,8 +113,8 @@ def department(request,user,department,year):
     obj1 = models.college.objects.get(name=obj.staffCollege)
     student = models.Student.objects.filter(department=department,year=year,clg = obj1.name)
     years = {"1":"first year","2":"second year","3":"third year","4":"final year"}
-    dep = {"cse":"computer science","it":"information technology","ece":"electronics and communication ","eee":"electrical and electronics","mech":"mechanical","civil":"civil"}
-    message = {"department":dep.get(str(department)),"year": years.get(str(year)),"logo":obj1.logo.url,"college":obj1.name,"detial":student}
+    
+    message = {"department":department,"year": years.get(str(year)),"logo":obj1.logo.url,"name":obj1.name,"detial":student,"userid":user}
     return render(request,"attendance.html",message)
 
                                         # # # ' ' 'STAFF ' ' ' # # #
@@ -180,7 +180,7 @@ def admin(request,user,department,year):
     obj = models.Staff.objects.get(staffUsername=user)
     obj1 = models.college.objects.get(name=obj.staffCollege) 
     detial = models.Student.objects.filter(department=department,year=year,clg = obj1.name) 
-    return render(request,"addstudent.html",{"logo":obj1.logo.url,"mydata":detial,"userid":obj.staffUsername})
+    return render(request,"addstudent.html",{"logo":obj1.logo.url,"mydata":detial,"userid":obj.staffUsername,"college":obj1.name})
 
 ############################################################ UPDATE   ###############################################
 
@@ -195,7 +195,8 @@ def update(request,id,user,department,year):
         return redirect("studentAdmin",user,department,year)
     else:
         obj = models.Student.objects.get(id=id)
-        return render(request,"update.html",{"data":obj})   
+        clg = models.college.objects.get(name = obj.clg)
+        return render(request,"update.html",{"data":obj,"logo":clg.logo.url,"college":clg.name})   
 
 ######################################################### DELETE ##################################################
 
@@ -218,6 +219,10 @@ def adddata(request,user,department,year):
     obj2.year = str(year)
     obj2.save()
     return redirect("studentAdmin",user,department,year)
+
+def newstudent(request,user,department,year,admin):
+    # return render(request,"newstudent.html",user,department,year,admin)
+    return render(request,"newstudent.html")
 
 ##########################@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   SUBMIT   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@####################
 def send(request,user,department,year):

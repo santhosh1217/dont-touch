@@ -1,0 +1,188 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">  -->
+    <link rel="stylesheet" href="https://cdn.usebootstrap.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+
+</head>
+<style>
+  nav .navbar{
+    position: fixed;
+    text-decoration: none;
+  }
+  .navbar-brand img{
+    height: 26px;
+    width: 26px;
+  }
+  #name
+  {
+    font-size:25px;
+    color: white;
+    margin-left: 60px;
+    margin-top: -60px;
+    font-size: 20px;
+
+
+  }
+  @media  screen and (min-width:484px) {
+
+  #name
+  {
+    
+    margin-top: 0%;
+    margin-left: 0%;
+    padding-right: 20%;
+    
+   
+  }
+
+}
+</style>
+<body>
+
+      <!-- <nav class="fixed-nav-bar" >
+        <div style="background-color: black;background-attachment:fixed;"><a href="http://127.0.0.1:8000" style=" font-size: 20px; font-weight: bold; margin-left: 30px;" >HOME</a>
+        
+        </div>
+      </nav> -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand"  href="#"><img style="border-radius: 10px ;width: 50px;height: 50px;"  src="{{logo}}" alt="123"></a>
+        <h1 id="name" >{{name}}</h1>
+        z<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                      
+            <li class="nav-item dropdown">
+              <a class="navbar-brand dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Departments
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item year" id="dep" href="cse" onclick="toggle()">cse</a>
+                <a class="dropdown-item" href="it"  id="dep1" onclick="toggle1()">it</a>
+                <a class="dropdown-item" href="mech" onclick="toggle2()">mech</a>
+                <a class="dropdown-item" href="civil" onclick="toggle3()">civil</a>
+                <a class="dropdown-item" href="ece" onclick="toggle4()">ece</a>
+                <a class="dropdown-item" href="eee" onclick="toggle5()">eee</a>
+                <a class="dropdown-item" href="aero" onclick="toggle6()">aero</a>   
+                <a class="dropdown-item" href="bio medical" onclick="toggle7()">bio medical</a>
+                <a class="dropdown-item" href="geo" onclick="toggle8()">geo informatics</a>
+                <a class="dropdown-item" href="mechetronics" onclick="toggle9()">mechetronics</a>
+                <a class="dropdown-item" href="textile" onclick="toggle10()">textile</a>
+                <a class="dropdown-item" href="medical electronics" onclick="toggle11()">medical electronics</a>
+                
+              </div>
+            </li>
+
+          </ul>
+          
+          <form class="form-inline my-2 my-lg-0" action="/" >
+            <div>
+            <a style="margin-right: 30px" class="navbar-brand" href="#">{{userid}}</a>
+          </div>
+        <div>
+            <button class="navbar-brand"    style="width:100%;border-color: rgba(240, 248, 255, 0);background-color: rgba(255, 255, 255, 0)">Logout</button>
+          </div>
+        </form>
+        </div>
+      </nav>
+      
+      <style>
+    
+
+      </style>
+
+
+
+      <script>
+        var val="";
+      
+    function toggle(){
+      val=val+"cse";
+      replac()
+      }
+    function toggle1(){
+    
+        val=val+"it";
+        replac()
+      }
+      function toggle2(){
+    
+        val=val+"mech";
+        replac()
+    }
+  function toggle3(){
+    
+    val=val+"civil";
+    replac()
+  }
+  function toggle4(){
+    
+    val=val+"ece";
+    replac()
+  }
+  function toggle5(){
+    
+    val=val+"eee";
+    replac()
+  }
+  function toggle6(){
+    
+    val=val+"aero";
+    replac()
+  }
+  function toggle7(){
+    
+    val=val+"bio medical";
+    replac()
+  }
+  function toggle8(){
+    
+    val=val+"geo informatics";
+    replac()
+  }
+  function toggle9(){
+    
+    val=val+"mechetronic";
+    replac()
+  }
+  function toggle10(){
+    
+    val=val+"textile";
+    replac()
+  }
+  function toggle11(){
+    
+    val=val+"medical electronics";
+    replac()
+  }
+      
+    
+
+  
+  function home(){
+    
+    var v=window.location.href;
+    var splitUrl = v.split('/');
+    var c=splitUrl[0]+"/"+splitUrl[1]+"/"+splitUrl[2]+"/"+splitUrl[3]+"/"+"deparments";
+    if (splitUrl[4]=="departments"){
+      location.replace(c)
+    }
+    else{
+
+    location.replace(c)
+    }
+  }
+  
+  </script>

@@ -9,51 +9,54 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css/institute signup.css' %}">
 
 </head>
-<body>
-	<form method="post"  action="submit" enctype="multipart/form-data">
+<body style="overflow: hidden">
+	<form method="post"  action="submit" enctype="multipart/form-data" class="forms">
 		{% csrf_token %}
 
-		<div class="full">
+		<center><div class="full">
 			<a href="#" id="refresh" hidden></a>
 		
 			{% if msg %}
 				<p  id='msg' >{{msg}}</p>
 			{% endif %}
-			
-			<label>username:
+	
+			<label>username:</label><br>
 			<input type="text" id="username" name="username"  required>
-			</label><br><br>
-			<label>password:
+			<br><br>
+			<label>password:</label><br>
 				<input id="p1" type="password" id="password" name="password"  required>
-			</label><br><br>
+			<br><br>
 
-			<label>confirm password:
+			<label>confirm password: <br>
 				<input id="p2" type="password" id="confirmPassword" name="confirmPassword"  required>
 				
 
 			</label><br><br>
 
 	
-			<label>insitution name:
+			<label>insitution name: <br>        
 				<input type="text" id="instituteName"  name="instituteName" required>
 				
 			</label><br><br>
-			<label>institution logo:
-				<input type="file" name="logo" accept="image/*" required >
-
-			</label><br><br><BR>
+			<div>
+			<label>institution logo:</label><br>
+			<input type="file" name="logo"accept="image/*" required >
+			</div>
+			</label><br>
+			
 			<button class="btn" onclick="Call()"  >
 				Sign UP
 			</button>
-			
-
+		
+			</div>
+		</center>
 			
 		
 		
 
 	</form>
 	
-	</div>
+	
 	<form action="signup" >
 		<button id="hack" hidden ></button>
 	</form>

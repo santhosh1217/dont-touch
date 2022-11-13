@@ -12,7 +12,7 @@ body{
     width: 50%;
     height: 50%;
 
-    
+    overflow: hidden;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -185,7 +185,7 @@ body {
     height: 100%;
     background: forestgreen;
     border-radius: 30px;
-    transition: .5s;
+    transition: 0s;
 }
 
 

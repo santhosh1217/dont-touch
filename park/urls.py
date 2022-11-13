@@ -67,6 +67,12 @@ urlpatterns = [
 ############################################################################## add student ################################
 
     path("<str:user>/<str:department>/<str:year>/admin/adddata",views.adddata),
+    
+    path("<str:user>/<str:department>/<str:year>/<str:admin>/newstudent/",views.newstudent,name="newstudent"),
+
+     path("<str:user>/<str:department>/<str:year>/admin/newstudent/adddata",views.adddata),
+
+   
 
 #############################################################################  attendance #################################
     path("<str:user>/<str:department>/<str:year>/submit/",views.send),

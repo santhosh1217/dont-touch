@@ -14,6 +14,7 @@
     <!-- <link rel="stylesheet" href="https://cdn.usebootstrap.com/bootstrap/4.2.1/css/bootstrap.min.css"> -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">  -->
 <style>
+
      *{
         padding: 0;
         margin: 0;
@@ -136,15 +137,16 @@ table {
   
 </head>
 <body  style="background-color: rgb(248, 247, 245);">
+
     
     
     {% block content %}
     <div>
-        {% include 'nav1.html' %}
+        {% include 'staff_navigation.html' %}
    </div>
     <!-- <link rel="stylesheet" href="{% static 'css/home.css' %}"> -->
     <div style="margin-top: 60px;">
-    <center><img src="{{logo}}" alt="no image" srcset="" class="logo" ></center>
+    
 
     <!-- {% if messages %}
         {% for message in messages %}
@@ -154,34 +156,37 @@ table {
             </div>
         {% endfor %}
     {% endif  %} -->
+ 
     
-    <div class="row">
+    <div class="row" style="margin-top: -5%">
         <div class="col-md-4">
         <form action="admin/addstaff" method="POST" class="forms">
         {% csrf_token %}
         <tt><p class="page-header text-primary text-center" style="font-size: 20px;">NEW REGISTRATION</p></tt>
         <div class="form-group">
-            <tt><label>Staff_Name</label></tt>
+            <tt><label>Staff Name : </label></tt>
             <input type="text" class="form-control" name="s_name" id="names">
         </div>
         <div class="form-group">
-            <tt><label>Staff_Department</label></tt>
+            <tt><label>Staff Department : </label></tt>
             <input type="text" class="form-control" name="s_dep">
         </div>
         <div class="form-group">
-            <tt><label>Staff_Position</label></tt>
+            <tt><label>Staff Position : </label></tt>
             <input type="text" class="form-control" name="s_position" >
         </div>
+
         <div class="form-group">
-            <tt><label>Staff_username</label></tt>
+            {% for i in messages %}
+            <p style="color: red">{{i}}</p>
+            {% endfor %}
+            <tt><label>Staff username : </label></tt>
             <input type="text" class="form-control" name="s_username" >
         </div>
-         {% for i in messages %}
-         <p>{{i}}</p>
-         {% endfor %}
+
         <div class="form-group">
-            <tt><label>Staff_Password</label></tt>
-            <input type="text" class="form-control" name="s_password" >
+            <tt><label>Staff Password : </label></tt>
+            <input type="password" class="form-control" name="s_password" >
         </div>
         <div>
 
@@ -194,18 +199,18 @@ table {
         
        </div><br><br>
        <div class="col-md-8" style="transition: 3s;padding: 0;margin: 0;">
-        <div class="pull-right" id="search" style="background-color: red;margin-left: 78%;"><input class="form-control" type="search" placeholder="Search" aria-label="Search" ></div>
-        <tt><h1 class="page-header text-danger text-center">View students Details</h1></tt>            
+        <div class="pull-right" id="search" style="background-color: red;margin-left: 74%; margin-top: 2%;"><input class="form-control" type="search" placeholder="Search" aria-label="Search" ></div>
+        <tt><h1 class="page-header text-danger text-center" style="margin-left: -10%;margin-top: -5%;">View Staff Details</h1></tt>            
             <table class="table table-bordered" style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;">
                 <thead >
                     <tr>
                         <th>S.NO</th>
-                        <th>Staff_Name</th>
-                        <th>Dep</th>
+                        <th>Name</th>
+                        <th>Department</th>
                         <th>Position</th>
-                        <th>Staff_username</th>
-                        <th>Staff_Password</th>
-                        <th>update</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Update</th>
                         <th>Delete</th>                      
                     </tr>
                 </thead>

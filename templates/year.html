@@ -7,50 +7,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        @media (max-width: 576px) {
-            #first{
-            margin-right: 70px;
 
+           
+        .first
+        {
+            margin-left: 20%;
+           
+            
+        }
+        .second
+        {
+            margin-top: -200px;
+            margin-left: 60%;
+            
         }
 
-       .a{
-        margin-right: 70px;     
-       }
-        }
-        img{
-            height: 200px;
-            width: 200px;
-            border-radius: 50px;
-        }
-        #first{
-            float: left;
-            margin:0 100px;
-            margin-top: 30px;
-        }
-       .a{
-                margin-left: 180px;
-       }
-       h1{
         
-       }
+        .third
+        {
+            margin-top: 50px;
+            margin-left: 20%;
+            
+        }
+
+        .final
+        {
+            margin-top:-200px;
+            margin-left: 60%;
+        }
+
+        img
+        {
+            width: 220px;
+            height: 200px;
+            border-radius: 20px;
+        }
+
+      
+        @media only  screen and (max-width: 480px) 
+        {
+           
+            img
+            {
+                width: 130px;
+                height: 110px;
+            }
+           
+            .first
+            {
+                margin-left: 5%;
+            }
+            .second
+            {
+                margin-top: -110px;
+                margin-left: 52%;
+            }
+            .third
+            {
+                margin-left: 5%;
+                margin-top:70px;
+            }
+            .final
+            {
+                margin-top:-110px;
+                margin-left: 52%;
+            }
+        }
+           
+
+
     </style>
 </head>
+
 <body>
-    {% include 'nav1.html' %}
-    <center><h1  id="h">{{name}}</h1></center>
+    {% include 'department_navigation.html' %}
+
     <center><h2 class="clg">department of {{link}}</h2></center>
-    <div class="a">
-        <a id="first" href="{{link}}/1"><img src="{% static 'images/years/first.jpeg' %}" alt="" width="250px" height="250px"></a>
+    <br>
+    
+<div class="years">
+    <div class="first">
+        <a id="first" href="{{link}}/1"><img src="{% static 'images/years/first.jpeg' %}" alt="" ></a>
     </div>
-    <div class="a">   
-        <a id="first" href="{{link}}/2"><img src="{% static 'images/years/second.jpg' %}" alt="" width="250px" height="250px"></a>
+
+    <div class="second">   
+        <a id="second" href="{{link}}/2"><img src="{% static 'images/years/second.jpg' %}" alt="" ></a>
     </div> 
-    <div class="a">   
-        <a id="first" href="{{link}}/3"><img src="{% static 'images/years/third.jpg' %}" alt="" width="250px" height="250px"></a>
+
+    <div class="third">   
+        <a id="third" href="{{link}}/3"><img src="{% static 'images/years/third.jpg' %}" alt="" ></a>
     </div> 
-    <div class="a">  
-        <a id="first" href="{{link}}/4"><img src="{% static 'images/years/final.jpg' %}" alt="" width="250px" height="250px"></a>
+
+    <div class="final">  
+        <a id="final" href="{{link}}/4"><img src="{% static 'images/years/final.jpg' %}" alt="" ></a>
     </div> 
+</div>
+<br>
 </body>
 
 </html>

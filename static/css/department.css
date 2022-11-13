@@ -6,17 +6,23 @@
 } */
 
 .hr{
+    /*  */
     float: left;
     width: 80px;
     height: 80px;
     align-items: center;
-    margin: 40px 68px;
+margin-left: 50px !important;
+    /* margin: 40px 90%; */
+
     border-radius: 50%;
     /* box-sizing: border-box;
     box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white; */
 }
+.hr{
+    margin-left: 90px;
+}
 .pname{
-    color: purple;
+    color: rgb(128, 0, 0);
 }
 .ci img{
     height: 50px;
@@ -44,6 +50,10 @@ p{
     text-align: center;
 }
 @media (max-width: 576px) {
+    .cname{
+        font-size: 20px;
+        color: aquamarine;
+    }
     p{
         font-size: 25px;
     }
@@ -56,11 +66,10 @@ p{
     }
     .hr{
         float: left;
-        width: 80px;
-        height: 80px;
-        padding: 1px; 
+        width: 60px;
+        height: 60px;
         align-items: center;
-        margin: 40px 60px; 
+         
         border-radius: 50%;
         /* box-sizing: border-box;
         box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white; */

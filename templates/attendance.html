@@ -8,70 +8,37 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Attentance Page</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-	<style type="text/css">
-		.top
-		{
-			text-align: center;
-			font-size: 20px;
-			color: purple;
-			background-color: #FDBD6B;
-			height: 200px;
-		}
-		.container
-		{
-			margin-top: 30px;
-			margin-bottom: 30px;
-			font-size: 26px;
-			color: black;
-			margin-left: 30px;	
-		}
-		#year
-		{
-			padding-left: 140px;
-		}
-		.btn
-		{
-			margin-left:  150px;
-		}
-		#sendmsg
-		{
-			margin-top:0%;
-			margin-left: 35%;
-		}
-		#submit
-		{
-			margin-left:800px;
-		}
-		.buttons
-		{
-			margin-top: 40px;
-		}
-		#msg
-		{
-			opacity: 5%;
-			margin-bottom:10%;
-			margin-left: 30%;
-			border: none;
-			border-bottom: 1px solid grey;
-		}
-	</style>
+
 </head>
 <body>
-	<div class="top">
-		<img id="logo" src="{{logo}}" width="150px" height="100px"><br>
-		<h1>{{college}}</h1>
-		
-		<br>
+	<div>
+		{% include 'attendance_navigation.html' %}
 	</div>
+
+	
 	<form action="admin/" method="post">
 		{% csrf_token %}
-		<div class="container">
-			<lable>{{department}}</lable>
-			<label id="year">{{year}}(Attendance Sheet)</label>
-			<button class="btn btn-outline-danger">edit</button>
+
+		<div id="top">
+			<br>
+
+			<div class="dep">
+				<lable >{{department}}</lable>
+		    </div>
+<br>
+			<div class="year">
+			<center>
+				<label  id="year">{{year}}(Attendance Sheet)</label>
+			</center>
+			</div>
+<br>
+			<div class="bt">
+			<button class="btn btn-outline-danger" id="btn" >edit</button>
+			</div>
+<br>
 		</div>
+	
 	</form>
-	<hr>
 	<br>
 	<form method="post" action="submit/">
 		{%csrf_token%}
@@ -91,23 +58,31 @@
 		</tr>
 		{% endfor %}
 	</table>
-<br><br>
 
+<div id="main">
+<center>
+	<br><br>
 	<div class="message">
-		<input id="msg" type="text" name="whatsapp" placeholder="Type The Message">
+		<input id="msg" type="text" style="width: 200px;" name="whatsapp" placeholder="Type The Message">
 	</div>
-
-	<div class="buttons">
+<br>
+	<div class="buttons" hidden>
 		<button id="submit" class="btn btn-outline-danger">submit</button>
 	</div>
 
-</form>
 
-	<div class="buttons">
-		<button id="sendmsg" onclick="message()" class="btn btn-outline-success">Send Message</button>
+
+	<div class="buttons" >
+		<button id="sendmsg" onclick="message()" class="btn btn-outline-success">Submit</button>
 	</div>
+</div>
+</form>
+</center>
+
+
 		
-	
+</body>
+</html>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 <script type="text/javascript">
@@ -117,5 +92,53 @@
 		document.getElementById("msg").style.opacity="90%"
 	}
 </script>
-</body>
-</html>
+
+
+<style type="text/css">
+	#top
+	{
+		border: 1px solid blue;	
+		font-size: large;
+		color: purple;
+		background-color: #FDBD6B;
+		
+		
+	}
+
+	.dep
+	{
+		margin-left: 2%;	
+	}
+	.year
+	{
+		margin-top: -60px;
+	}
+	.bt
+	{
+		margin-top: -60px;
+		margin-left:85%;
+	}
+
+
+
+	
+
+
+
+	#submit
+	{
+		margin-top: -130px;
+		margin-left:70%;
+		border: 1px sold rgb(0, 255, 0);
+		visibility: hidden;
+	}
+
+	#msg
+	{
+		
+	
+		border: none;
+		border-bottom: 1px solid grey;
+	} 
+
+</style>
