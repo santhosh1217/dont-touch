@@ -78,7 +78,7 @@ if (k == 1 || k == 3 )
 			}
 		document.getElementById("us").style.borderBottom = "1px solid red";
 			
-}		setTimeout(Func,3000)
+}		//setTimeout(Func,3000)
 if(k==2 || k==4)
 {
 			
@@ -91,7 +91,7 @@ if(k==2 || k==4)
 
 		document.getElementById("ps").style.borderBottom = "1px solid red";
 		
-		setTimeout(Func,3000)
+		//setTimeout(Func,5000)
 
 				
 }
