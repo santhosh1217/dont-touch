@@ -251,7 +251,7 @@ def send(request,user,department,year):
     for i in obj:
         if i.attendance  == False:
             l.append(i.name)   
-            number = i.s_mobile   
+            number ="91"+ str(i.s_mobile)
             msg = request.POST["whatsapp"]
             msg = "*Greetings from "+clg.name +" :*"+" "+msg
             print(clg.logo.url)
