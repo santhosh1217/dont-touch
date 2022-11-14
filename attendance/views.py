@@ -255,7 +255,7 @@ def send(request,user,department,year):
             msg = request.POST["whatsapp"]
             msg = "*Greetings from "+clg.name +" :*"+" "+msg
             print(clg.logo.url)
-            requests.get(f"https://www.ai2me.com/api/send-media.php?number={number}&msg={msg}&media=https://www.pcet.ac.in/wp-content/themes/park-theme/assets/img/park-50year-logo.png&apikey=9f05a8418bd39b18f88865347fe2b75486a4455c&instance=UfgvHJ9sd5BbRSw")
+            requests.get(f"https://www.ai2me.com/api/send-media.php?number={number}&msg={msg}&media=https://www.pcet.ac.in/wp-content/themes/park-theme/assets/img/park-50year-logo.png&apikey=8986051af7659d0bb239792b5e6c7c1659178e97&instance=F2P9D4o5wguLhbJ")
 
 
 
