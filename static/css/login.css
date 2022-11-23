@@ -6,7 +6,7 @@ html{
 }
 body{
 	text-transform: capitalize;
-	background: url("../images/bg/admin.png");
+	background: url("../images/bg/back.jpg") no-repeat center center fixed;
 	background-size:auto;
     background-attachment: fixed;
     background-repeat:no-repeat ;
